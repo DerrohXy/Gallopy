@@ -7,7 +7,7 @@ import {
     BiMenu,
     BiXCircle,
 } from "react-icons/bi";
-import "./index.css";
+import "./styles.css";
 
 function IsNull_(item) {
     return item === null || item === undefined || item === "";
@@ -38,6 +38,20 @@ function Spread_(items) {
 }
 
 function CreateElement_(tag, properties, ...children) {
+    if (typeof tag === "string") {
+        let properties_ = {};
+        Object.entries(properties).map(([k, v]) => {
+            if (
+                ["string", "number", "boolean", "function"].includes(
+                    typeof v
+                ) ||
+                k === "style"
+            ) {
+                properties_[k] = v;
+            }
+        });
+        return React.createElement(tag, properties_, ...Spread_(children));
+    }
     return React.createElement(tag, properties, ...Spread_(children));
 }
 
@@ -1709,7 +1723,7 @@ export function ApplicationV2(properties) {
 }
 
 export function showDialog(properties) {
-    CloseDialogs();
+    closeDialogs();
     let content = LoadContent_(properties.content),
         dialogId = GetUniqueId_();
     let baseElement = document.createElement("div"),
@@ -1746,7 +1760,7 @@ export function showDialog(properties) {
                               style: { fontSize: "25px", margin: "5px" },
                               onClick: (event) => {
                                   event.stopPropagation();
-                                  CloseDialog(dialogId);
+                                  closeDialog(dialogId);
                               },
                           })
                   ),
@@ -1756,7 +1770,7 @@ export function showDialog(properties) {
     baseElement.setAttribute("dialog-id", dialogId);
     if (properties.closeOnClickOutside === true) {
         baseElement.addEventListener("click", () => {
-            CloseDialog(dialogId);
+            closeDialog(dialogId);
         });
     }
     document.body.appendChild(baseElement);
@@ -1766,7 +1780,7 @@ export function showDialog(properties) {
         typeof properties.duration === "number"
     ) {
         setTimeout(() => {
-            CloseDialog(dialogId);
+            closeDialog(dialogId);
         }, properties.duration);
     }
     return dialogId;
@@ -1780,7 +1794,7 @@ export function closeDialog(dialogId) {
 }
 
 export function showNotification(properties) {
-    CloseNotifications();
+    closeNotifications();
     let content = LoadContent_(properties.content),
         notificationId = GetUniqueId_();
     let baseElement = document.createElement("div"),
@@ -1799,7 +1813,7 @@ export function showNotification(properties) {
     document.body.appendChild(baseElement);
     Render_(element, baseElement);
     setTimeout(() => {
-        CloseNotification(notificationId);
+        closeNotification(notificationId);
     }, properties.duration || 3000);
     return notificationId;
 }
@@ -1814,7 +1828,7 @@ export function closeNotification(notificationId) {
 }
 
 export function showToast(properties) {
-    CloseToasts();
+    closeToasts();
     if (IsNull_(properties.text)) {
         return;
     }
@@ -1826,7 +1840,7 @@ export function showToast(properties) {
     Object.assign(baseElement.style, properties.style || {});
     document.body.appendChild(baseElement);
     setTimeout(() => {
-        CloseToast(toastId);
+        closeToast(toastId);
     }, properties.duration || 3000);
     return toastId;
 }
