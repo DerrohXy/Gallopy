@@ -1,0 +1,22 @@
+{
+    "name": "react-library",
+    "version": "0.0.1",
+    "description": "",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "sideEffects": false,
+    "scripts": {
+        "build": "mkdir -p dist && cp src/index.js dist && cp src/index.css dist"
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-icons": "^4.12.0"
+    }
+}
