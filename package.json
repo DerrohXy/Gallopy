@@ -1,5 +1,5 @@
 {
-    "name": "react-library",
+    "name": "@derrickwafula/react-library",
     "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
