@@ -1,11 +1,11 @@
 {
-    "name": "derrohxy-react-library",
-    "version": "0.0.2",
+    "name": "gallopy",
+    "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "scripts": {
-        "build": "mkdir -p dist && cp src/index.js dist && cp src/styles.css dist"
+        "build": "./build.sh"
     },
     "files": [
         "dist"
