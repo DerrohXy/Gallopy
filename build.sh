@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p dist
-rm -rf dist/*
-cp src/index.js dist
+# Compile TypeScript
+tsc
+
+# Copy styles
 cp src/styles.css dist
-cp package.json dist
