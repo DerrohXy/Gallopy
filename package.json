@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.5",
+    "version": "0.0.7",
     "description": "",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -19,8 +19,8 @@
     "author": "",
     "license": "MIT",
     "peerDependencies": {
-        "react": "^15.3.2",
-        "react-dom": "^15.3.2",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
         "react-icons": "^4.12.0"
     },
     "devDependencies": {

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf dist
+
 # Compile TypeScript
 tsc
 

@@ -2319,7 +2319,7 @@ export function showDialog(properties: ShowDialogProps) {
             style={properties.style || {}}
         >
             {properties.splash ? null : (
-                <div>
+                <div className={Classes_.DIALOG_TITLE_BAR}>
                     {properties.icon || (
                         <BiInfoSquare style={iconStyle}></BiInfoSquare>
                     )}
