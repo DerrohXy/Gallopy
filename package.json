@@ -181,7 +181,6 @@
         "dist"
     ],
     "keywords": [],
-    "author": "",
     "license": "MIT",
     "peerDependencies": {
         "react": "^19.1.1",
