@@ -1,16 +1,23 @@
 {
     "compilerOptions": {
         "target": "ES2017",
-        "module": "NodeNext",
+        "module": "ESNext",
         "lib": ["DOM", "ESNext"],
         "declaration": true,
+        "declarationMap": true,
         "outDir": "./dist",
         "strict": true,
         "esModuleInterop": true,
-        "moduleResolution": "nodenext",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
         "skipLibCheck": true,
-        "sourceMap": false,
-        "jsx": "react"
+        "sourceMap": true,
+        "jsx": "react-jsx",
+        "isolatedModules": true,
+        "noEmit": false,
+        "preserveConstEnums": true,
+        "removeComments": false
     },
-    "include": ["src"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.stories.*"]
 }
