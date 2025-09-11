@@ -143,9 +143,7 @@ type ShowToastProps = {
 
 export function showToast(properties: ShowToastProps): string | null {
     closeToasts();
-    if (properties.text) {
-        return null;
-    }
+
     let toastId = GetUniqueId(),
         baseElement = document.createElement("div");
 

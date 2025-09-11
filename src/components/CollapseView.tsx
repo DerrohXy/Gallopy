@@ -68,6 +68,7 @@ function CollapseView_(properties: CollapseViewProps) {
                     event: React.MouseEvent<HTMLDivElement, MouseEvent>
                 ) => {
                     event.stopPropagation();
+                    props.onCollapse?.(!state.open);
                     setState({ open: !state.open });
                 }}
                 style={props.titleBarStyle}

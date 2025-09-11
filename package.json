@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
@@ -21,6 +21,146 @@
             "import": "./dist/utils/index.esm.js",
             "require": "./dist/utils/index.js",
             "types": "./dist/utils/index.d.ts"
+        },
+        "./Activity": {
+            "import": "./dist/components/Activity.esm.js",
+            "require": "./dist/components/Activity.js",
+            "types": "./dist/components/Activity.d.ts"
+        },
+        "./Application": {
+            "import": "./dist/components/Application.esm.js",
+            "require": "./dist/components/Application.js",
+            "types": "./dist/components/Application.d.ts"
+        },
+        "./AudioView": {
+            "import": "./dist/components/AudioView.esm.js",
+            "require": "./dist/components/AudioView.js",
+            "types": "./dist/components/AudioView.d.ts"
+        },
+        "./Button": {
+            "import": "./dist/components/Button.esm.js",
+            "require": "./dist/components/Button.js",
+            "types": "./dist/components/Button.d.ts"
+        },
+        "./Canvas": {
+            "import": "./dist/components/Canvas.esm.js",
+            "require": "./dist/components/Canvas.js",
+            "types": "./dist/components/Canvas.d.ts"
+        },
+        "./CollapseView": {
+            "import": "./dist/components/CollapseView.esm.js",
+            "require": "./dist/components/CollapseView.js",
+            "types": "./dist/components/CollapseView.d.ts"
+        },
+        "./Controls": {
+            "import": "./dist/components/Controls.esm.js",
+            "require": "./dist/components/Controls.js",
+            "types": "./dist/components/Controls.d.ts"
+        },
+        "./FooterBar": {
+            "import": "./dist/components/FooterBar.esm.js",
+            "require": "./dist/components/FooterBar.js",
+            "types": "./dist/components/FooterBar.d.ts"
+        },
+        "./Headings": {
+            "import": "./dist/components/Headings.esm.js",
+            "require": "./dist/components/Headings.js",
+            "types": "./dist/components/Headings.d.ts"
+        },
+        "./Icon": {
+            "import": "./dist/components/Icon.esm.js",
+            "require": "./dist/components/Icon.js",
+            "types": "./dist/components/Icon.d.ts"
+        },
+        "./IconButton": {
+            "import": "./dist/components/IconButton.esm.js",
+            "require": "./dist/components/IconButton.js",
+            "types": "./dist/components/IconButton.d.ts"
+        },
+        "./ImageView": {
+            "import": "./dist/components/ImageView.esm.js",
+            "require": "./dist/components/ImageView.js",
+            "types": "./dist/components/ImageView.d.ts"
+        },
+        "./Inputs": {
+            "import": "./dist/components/Inputs.esm.js",
+            "require": "./dist/components/Inputs.js",
+            "types": "./dist/components/Inputs.d.ts"
+        },
+        "./Label": {
+            "import": "./dist/components/Label.esm.js",
+            "require": "./dist/components/Label.js",
+            "types": "./dist/components/Label.d.ts"
+        },
+        "./Layout": {
+            "import": "./dist/components/Layout.esm.js",
+            "require": "./dist/components/Layout.js",
+            "types": "./dist/components/Layout.d.ts"
+        },
+        "./Link": {
+            "import": "./dist/components/Link.esm.js",
+            "require": "./dist/components/Link.js",
+            "types": "./dist/components/Link.d.ts"
+        },
+        "./Lists": {
+            "import": "./dist/components/Lists.esm.js",
+            "require": "./dist/components/Lists.js",
+            "types": "./dist/components/Lists.d.ts"
+        },
+        "./Media": {
+            "import": "./dist/components/Media.esm.js",
+            "require": "./dist/components/Media.js",
+            "types": "./dist/components/Media.d.ts"
+        },
+        "./Menu": {
+            "import": "./dist/components/Menu.esm.js",
+            "require": "./dist/components/Menu.js",
+            "types": "./dist/components/Menu.d.ts"
+        },
+        "./NavigationBar": {
+            "import": "./dist/components/NavigationBar.esm.js",
+            "require": "./dist/components/NavigationBar.js",
+            "types": "./dist/components/NavigationBar.d.ts"
+        },
+        "./Paragraph": {
+            "import": "./dist/components/Paragraph.esm.js",
+            "require": "./dist/components/Paragraph.js",
+            "types": "./dist/components/Paragraph.d.ts"
+        },
+        "./Progress": {
+            "import": "./dist/components/Progress.esm.js",
+            "require": "./dist/components/Progress.js",
+            "types": "./dist/components/Progress.d.ts"
+        },
+        "./Scroll": {
+            "import": "./dist/components/Scroll.esm.js",
+            "require": "./dist/components/Scroll.js",
+            "types": "./dist/components/Scroll.d.ts"
+        },
+        "./Selection": {
+            "import": "./dist/components/Selection.esm.js",
+            "require": "./dist/components/Selection.js",
+            "types": "./dist/components/Selection.d.ts"
+        },
+        "./SelectionView": {
+            "import": "./dist/components/SelectionView.esm.js",
+            "require": "./dist/components/SelectionView.js",
+            "types": "./dist/components/SelectionView.d.ts"
+        },
+        "./TabbedWindow": {
+            "import": "./dist/components/TabbedWindow.esm.js",
+            "require": "./dist/components/TabbedWindow.js",
+            "types": "./dist/components/TabbedWindow.d.ts"
+        },
+        "./Table": {
+            "import": "./dist/components/Table.esm.js",
+            "require": "./dist/components/Table.js",
+            "types": "./dist/components/Table.d.ts"
+        },
+        "./VideoView": {
+            "import": "./dist/components/VideoView.esm.js",
+            "require": "./dist/components/VideoView.js",
+            "types": "./dist/components/VideoView.d.ts"
         }
     },
     "sideEffects": false,

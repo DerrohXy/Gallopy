@@ -89,6 +89,7 @@ function SelectionView_(properties: SelectionViewProps) {
                                 ) => {
                                     event.stopPropagation();
                                     setSelection(item);
+                                    props.onSelection(item);
                                 }}
                             >
                                 {selection.content ||

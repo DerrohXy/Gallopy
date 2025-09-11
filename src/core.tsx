@@ -619,22 +619,11 @@ export const CustomEvents = {
     CLOSE_DRAWERS_REQUEST: "CLOSE_DRAWERS_REQUEST",
 };
 
-function Initialize_() {
+export function Initialize() {
     window.addEventListener("click", () => {
         window.dispatchEvent(new CustomEvent(CustomEvents.WINDOW_CLICK, {}));
     });
     window.addEventListener("scroll", () => {
         window.dispatchEvent(new CustomEvent(CustomEvents.WINDOW_SCROLL, {}));
     });
-}
-
-export function Initialize() {
-    Initialize_();
-}
-
-export function getConstants() {
-    return {
-        Colors: Colors,
-        Classes: Classes,
-    };
 }

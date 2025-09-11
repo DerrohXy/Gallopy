@@ -96,6 +96,7 @@ function TabbedWindow_(properties: TabbedWindowProps) {
                             ) => {
                                 event.stopPropagation();
                                 setState({ currentTabIndex: index });
+                                props.onTabSelection?.(index);
                             }}
                             style={props.titleStyle}
                         >

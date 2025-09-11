@@ -33,6 +33,7 @@ function Switch_(properties: SwitchProps) {
             }
             onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
                 event?.stopPropagation();
+                props.onActiveChange(!state.active);
                 setState({ active: !state.active });
             }}
             {...RemoveFields(props, ["className", "onActiveChange", "active"])}
@@ -82,6 +83,7 @@ function CheckButton_(properties: CheckButtonProps) {
             className={(props.className || "") + " " + Classes.CHECK_BUTTON}
             onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
                 event.stopPropagation();
+                props.onCheckedChange(!state.checked);
                 setState({ checked: !state.checked });
             }}
             {...RemoveFields(props, [
@@ -170,6 +172,7 @@ function RadioGroup_(properties: RadioGroupProps) {
                             event: React.MouseEvent<HTMLDivElement, MouseEvent>
                         ) => {
                             event.stopPropagation();
+                            props.onCheckedChange(item);
                             setState({ checked: item });
                         }}
                         style={props.radioButtonStyle}
