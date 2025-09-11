@@ -1,10 +1,4 @@
-import {
-    Classes,
-    RemoveFields,
-    CustomElement,
-    LoadDefaultProperties,
-    CustomEvents,
-} from "../core";
+import { Classes, RemoveFields, LoadDefaultProperties } from "../core";
 import React from "react";
 
 type SwitchState = {
@@ -17,7 +11,7 @@ type SwitchProps = React.HTMLAttributes<HTMLDivElement> & {
     active?: boolean;
 };
 
-export function Switch(properties: SwitchProps) {
+function Switch_(properties: SwitchProps) {
     let defaultState: SwitchState = {
         active: properties.active === true ? true : false,
     };
@@ -54,6 +48,10 @@ export function Switch(properties: SwitchProps) {
     );
 }
 
+export function Switch(properties: SwitchProps) {
+    return <Switch_ {...properties} />;
+}
+
 type CheckButtonProps = React.HTMLAttributes<HTMLDivElement> & {
     onCheckedChange: Function;
     text: string;
@@ -65,7 +63,7 @@ type CheckButtonState = {
     [key: string]: any;
 };
 
-export function CheckButton(properties: CheckButtonProps) {
+function CheckButton_(properties: CheckButtonProps) {
     let defaultState: CheckButtonState = {
         checked: properties.checked === true ? true : false,
     };
@@ -106,6 +104,10 @@ export function CheckButton(properties: CheckButtonProps) {
     );
 }
 
+export function CheckButton(properties: CheckButtonProps) {
+    return <CheckButton_ {...properties} />;
+}
+
 type RadioGroupItem = {
     value: any;
     text: any;
@@ -123,7 +125,7 @@ type RadioGroupState = {
     [key: string]: any;
 };
 
-export function RadioGroup(properties: RadioGroupProps) {
+function RadioGroup_(properties: RadioGroupProps) {
     let defaultState: RadioGroupState = {
         checked: {
             text: "",
@@ -185,4 +187,8 @@ export function RadioGroup(properties: RadioGroupProps) {
             })}
         </div>
     );
+}
+
+export function RadioGroup(properties: RadioGroupProps) {
+    return <RadioGroup_ {...properties} />;
 }

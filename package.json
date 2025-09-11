@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
@@ -11,7 +11,7 @@
             "require": "./dist/index.js",
             "types": "./dist/index.d.ts"
         },
-        "./styles": "./dist/styles.css",
+        "./styles": "./dist/index.css",
         "./components": {
             "import": "./dist/components/index.esm.js",
             "require": "./dist/components/index.js",
@@ -25,9 +25,11 @@
     },
     "sideEffects": false,
     "scripts": {
-        "build": "tsc && rollup --config --bundleConfigAsCjs",
-        "build:watch": "tsc && rollup -c -w",
-        "build:analyze": "tsc && rollup -c && npx rollup-plugin-visualizer dist/stats.html",
+        "rollup": "rollup --config --bundleConfigAsCjs",
+        "rollup-watch": "rollup -w --config --bundleConfigAsCjs",
+        "build": "tsc && npm run rollup",
+        "build:watch": "tsc && npm run rollup-watch",
+        "build:analyze": "tsc && npm run rollup && npx rollup-plugin-visualizer dist/stats.html",
         "size": "npm run build && npx size-limit"
     },
     "files": [

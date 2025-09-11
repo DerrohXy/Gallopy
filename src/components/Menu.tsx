@@ -20,7 +20,7 @@ type MenuState = {
     [key: string]: any;
 };
 
-export function Menu(properties: MenuProps) {
+function Menu_(properties: MenuProps) {
     let defaultState: MenuState = {
         open: properties.open === true ? true : false,
     };
@@ -115,6 +115,10 @@ export function Menu(properties: MenuProps) {
             )}
         </div>
     );
+}
+
+export function Menu(properties: MenuProps) {
+    return <Menu_ {...properties} />;
 }
 
 export function MenuBar(

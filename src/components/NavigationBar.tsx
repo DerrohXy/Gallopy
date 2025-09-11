@@ -1,14 +1,12 @@
 import {
     Classes,
-    GetUniqueId,
     RemoveFields,
-    CustomElement,
     LoadContent,
     LoadDefaultProperties,
     CustomEvents,
 } from "../core";
 import React from "react";
-import { BiCaretDown, BiMenu } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 
 type NavigationBarState = {
     drawerOpen: boolean;

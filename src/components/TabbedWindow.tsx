@@ -1,11 +1,4 @@
-import {
-    Classes,
-    GetUniqueId,
-    RemoveFields,
-    CustomElement,
-    LoadDefaultProperties,
-    CustomEvents,
-} from "../core";
+import { Classes, RemoveFields, LoadDefaultProperties } from "../core";
 import React from "react";
 
 type TabLocation = "left" | "right" | "center";

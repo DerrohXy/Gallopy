@@ -1,7 +1,6 @@
 import {
     Classes,
     RemoveFields,
-    CustomElement,
     LoadDefaultProperties,
     CustomEvents,
 } from "../core";

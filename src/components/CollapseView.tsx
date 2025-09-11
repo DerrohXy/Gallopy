@@ -1,11 +1,8 @@
 import {
     Classes,
-    GetUniqueId,
     RemoveFields,
-    CustomElement,
     LoadContent,
     LoadDefaultProperties,
-    CustomEvents,
 } from "../core";
 import React from "react";
 import { BiCaretDown, BiCaretUp } from "react-icons/bi";
