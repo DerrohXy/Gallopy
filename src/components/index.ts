@@ -29,7 +29,7 @@ export {
     ColorInput,
     FileInput,
 } from "./Inputs";
-export { Selection, Option } from "./Selection";
+export { Select as Selection, Option } from "./Selection";
 export { SelectionView } from "./SelectionView";
 export { ProgressBar, Slider, ProgressIndicator } from "./Progress";
 export { CheckButton, RadioGroup, Switch } from "./Controls";

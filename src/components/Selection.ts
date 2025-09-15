@@ -1,7 +1,7 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function Selection(
+export function Select(
     properties: React.HTMLAttributes<HTMLSelectElement>,
     ...options: Array<any>
 ) {
