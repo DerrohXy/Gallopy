@@ -190,3 +190,59 @@ export function closeToasts() {
         element.parentNode?.removeChild(element);
     });
 }
+
+export type GLStoreState = {
+    [key: string]: any;
+};
+
+export type GLStoreHandlers = {
+    [key: string]: Function;
+};
+
+export type GLStore = {
+    state: GLStoreState;
+    handlers: GLStoreHandlers;
+    getState(): GLStoreState;
+    setState(state: GLStoreState): void;
+    subscribe(handler: Function): string;
+    unsubscribe(handlerId: string): void;
+};
+
+function Store_(state: GLStoreState): GLStore {
+    return {
+        state: state,
+        handlers: {},
+        getState() {
+            return this.state;
+        },
+        setState(state: GLStoreState) {
+            this.state = {
+                ...this.state,
+                ...state,
+            };
+
+            Object.values(this.handlers).map((handler) => {
+                handler(this.state);
+            });
+        },
+        subscribe(handler: Function): string {
+            let handlerId = GetUniqueId();
+            this.handlers[handlerId] = handler;
+
+            return handlerId;
+        },
+        unsubscribe(handlerId: string) {
+            delete this.handlers[handlerId];
+        },
+    };
+}
+
+/**
+ * Constructor for a CurlUIStore,a watchable properties object,
+ * listeners can be bound to it for each time the state of the store chages.
+ * @param state The initial state of the store.
+ * @returns The store object.
+ */
+export function Store(defaultState: GLStoreState): GLStore {
+    return Store_(defaultState);
+}
