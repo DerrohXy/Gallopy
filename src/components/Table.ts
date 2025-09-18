@@ -68,9 +68,12 @@ export function TableHeader(
     );
 }
 
-export type CaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>;
+export type TableCaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>;
 
-export function Caption(properties: CaptionProps, ...children: Array<any>) {
+export function TableCaption(
+    properties: TableCaptionProps,
+    ...children: Array<any>
+) {
     return CustomElement(
         "caption",
         Classes.CAPTION,

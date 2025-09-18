@@ -30,7 +30,7 @@ export {
 } from "./Inputs";
 export { Select as Selection, Option } from "./Selection";
 export { SelectionView } from "./SelectionView";
-export { ProgressBar, Slider, ProgressIndicator } from "./Progress";
+export { ProgressBar, Slider, SpinningLoader as ProgressIndicator } from "./Progress";
 export { CheckButton, RadioGroup, Switch } from "./Controls";
 export { Menu, MenuBar, MenuItem } from "./Menu";
 export { TabbedWindow } from "./TabbedWindow";
@@ -46,7 +46,7 @@ export {
     TableRow,
     TableData,
     TableHeader,
-    Caption,
+    TableCaption as Caption,
 } from "./Table";
 export { Embed, Iframe } from "./Media";
 export {

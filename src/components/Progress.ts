@@ -20,8 +20,8 @@ export function ProgressBar(properties: ProgressBarProps) {
     return CustomElement("progress", Classes.PROGRESS_BAR, {}, properties);
 }
 
-export type ProgressIndicatorProps = React.HTMLAttributes<HTMLDivElement>;
+export type SpinningLoaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-export function ProgressIndicator(properties: ProgressIndicatorProps) {
-    return CustomElement("div", Classes.PROGRESS_INDICATOR, {}, properties);
+export function SpinningLoader(properties: SpinningLoaderProps) {
+    return CustomElement("div", Classes.SPINNING_LOADER, {}, properties);
 }

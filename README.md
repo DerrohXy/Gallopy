@@ -192,10 +192,10 @@ import { Paragraph, ParagraphProps } from "gallopy/Paragraph";
 import {
     ProgressBar,
     Slider,
-    ProgressIndicator,
+    SpinningLoader,
     SliderProps,
     ProgressBarProps,
-    ProgressIndicatorProps,
+    SpinningLoaderProps,
 } from "gallopy/Progress";
 ```
 
