@@ -239,11 +239,11 @@ import {
     TableRow,
     TableData,
     TableHeader,
-    Caption,
+    TableCaption,
     TableProps,
     TableCellProps,
     TableRowProps,
-    CaptionProps,
+    TableCaptionProps,
 } from "gallopy/Table";
 ```
 
