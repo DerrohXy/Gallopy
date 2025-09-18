@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "author": {
         "name": "Derrick Wafula",
         "email": "derrickwafula1500@gmail.com",
@@ -71,11 +71,6 @@
             "import": "./dist/components/Headings.esm.js",
             "require": "./dist/components/Headings.js",
             "types": "./dist/components/Headings.d.ts"
-        },
-        "./Icon": {
-            "import": "./dist/components/Icon.esm.js",
-            "require": "./dist/components/Icon.js",
-            "types": "./dist/components/Icon.d.ts"
         },
         "./IconButton": {
             "import": "./dist/components/IconButton.esm.js",
