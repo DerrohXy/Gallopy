@@ -1,15 +1,16 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function Table(
-    properties: React.HTMLAttributes<HTMLTableElement>,
-    ...children: Array<any>
-) {
+export type TableProps = React.HTMLAttributes<HTMLTableElement>;
+
+export function Table(properties: TableProps, ...children: Array<any>) {
     return CustomElement("table", Classes.TABLE, {}, properties, ...children);
 }
 
+export type TableCellProps = React.HTMLAttributes<HTMLTableCellElement>;
+
 export function TableHeading(
-    properties: React.HTMLAttributes<HTMLTableCellElement>,
+    properties: TableCellProps,
     ...children: Array<any>
 ) {
     return CustomElement(
@@ -22,7 +23,7 @@ export function TableHeading(
 }
 
 export function TableFooter(
-    properties: React.HTMLAttributes<HTMLTableCellElement>,
+    properties: TableCellProps,
     ...children: Array<any>
 ) {
     return CustomElement(
@@ -34,10 +35,7 @@ export function TableFooter(
     );
 }
 
-export function TableBody(
-    properties: React.HTMLAttributes<HTMLTableCellElement>,
-    ...children: Array<any>
-) {
+export function TableBody(properties: TableCellProps, ...children: Array<any>) {
     return CustomElement(
         "tbody",
         Classes.TABLE_BODY,
@@ -47,22 +45,18 @@ export function TableBody(
     );
 }
 
-export function TableRow(
-    properties: React.HTMLAttributes<HTMLTableRowElement>,
-    ...children: Array<any>
-) {
+export type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;
+
+export function TableRow(properties: TableRowProps, ...children: Array<any>) {
     return CustomElement("tr", Classes.TABLE_ROW, {}, properties, ...children);
 }
 
-export function TableData(
-    properties: React.HTMLAttributes<HTMLTableCellElement>,
-    ...children: Array<any>
-) {
+export function TableData(properties: TableCellProps, ...children: Array<any>) {
     return CustomElement("td", Classes.TABLE_DATA, {}, properties, ...children);
 }
 
 export function TableHeader(
-    properties: React.HTMLAttributes<HTMLTableCellElement>,
+    properties: TableCellProps,
     ...children: Array<any>
 ) {
     return CustomElement(
@@ -74,10 +68,9 @@ export function TableHeader(
     );
 }
 
-export function Caption(
-    properties: React.HTMLAttributes<HTMLTableCaptionElement>,
-    ...children: Array<any>
-) {
+export type CaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>;
+
+export function Caption(properties: CaptionProps, ...children: Array<any>) {
     return CustomElement(
         "caption",
         Classes.CAPTION,

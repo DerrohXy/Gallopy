@@ -1,12 +1,12 @@
 import { Classes, RemoveFields, LoadDefaultProperties } from "../core";
 import React from "react";
 
-type SwitchState = {
+export type SwitchState = {
     active: boolean;
     [key: string]: any;
 };
 
-type SwitchProps = React.HTMLAttributes<HTMLDivElement> & {
+export type SwitchProps = React.HTMLAttributes<HTMLDivElement> & {
     onActiveChange: Function;
     active?: boolean;
 };
@@ -53,13 +53,13 @@ export function Switch(properties: SwitchProps) {
     return <Switch_ {...properties} />;
 }
 
-type CheckButtonProps = React.HTMLAttributes<HTMLDivElement> & {
+export type CheckButtonProps = React.HTMLAttributes<HTMLDivElement> & {
     onCheckedChange: Function;
     text: string;
     checked?: boolean;
 };
 
-type CheckButtonState = {
+export type CheckButtonState = {
     checked: boolean;
     [key: string]: any;
 };
@@ -110,19 +110,19 @@ export function CheckButton(properties: CheckButtonProps) {
     return <CheckButton_ {...properties} />;
 }
 
-type RadioGroupItem = {
+export type RadioGroupItem = {
     value: any;
     text: any;
 };
 
-type RadioGroupProps = React.HTMLAttributes<HTMLDivElement> & {
+export type RadioGroupProps = React.HTMLAttributes<HTMLDivElement> & {
     radioItems: Array<RadioGroupItem>;
     vertical?: boolean;
     onCheckedChange: Function;
     radioButtonStyle?: React.CSSProperties;
 };
 
-type RadioGroupState = {
+export type RadioGroupState = {
     checked?: RadioGroupItem;
     [key: string]: any;
 };

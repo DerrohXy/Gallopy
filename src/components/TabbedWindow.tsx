@@ -1,9 +1,9 @@
 import { Classes, RemoveFields, LoadDefaultProperties } from "../core";
 import React from "react";
 
-type TabLocation = "left" | "right" | "center";
+export type TabLocation = "left" | "right" | "center";
 
-type TabbedWindowProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TabbedWindowProps = React.HTMLAttributes<HTMLDivElement> & {
     tabs: Array<TabbedWindowTab>;
     vertical?: boolean;
     titleBarStyle?: React.CSSProperties;
@@ -14,12 +14,12 @@ type TabbedWindowProps = React.HTMLAttributes<HTMLDivElement> & {
     currentTabIndex?: number;
 };
 
-type TabbedWindowState = {
+export type TabbedWindowState = {
     currentTabIndex: number;
     [key: string]: any;
 };
 
-type TabbedWindowTab = {
+export type TabbedWindowTab = {
     title: any;
     content: any;
 };

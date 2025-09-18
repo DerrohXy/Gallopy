@@ -1,8 +1,10 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
+export type ScrollWindowProps = React.HTMLAttributes<HTMLDivElement>;
+
 export function ScrollWindow(
-    properties: React.HTMLAttributes<HTMLDivElement>,
+    properties: ScrollWindowProps,
     ...children: Array<any>
 ) {
     return CustomElement(
@@ -15,7 +17,7 @@ export function ScrollWindow(
 }
 
 export function VerticalScrollWindow(
-    properties: React.HTMLAttributes<HTMLDivElement>,
+    properties: ScrollWindowProps,
     ...children: Array<any>
 ) {
     return CustomElement(
@@ -28,7 +30,7 @@ export function VerticalScrollWindow(
 }
 
 export function HorizontalScrollWindow(
-    properties: React.HTMLAttributes<HTMLDivElement>,
+    properties: ScrollWindowProps,
     ...children: Array<any>
 ) {
     return CustomElement(

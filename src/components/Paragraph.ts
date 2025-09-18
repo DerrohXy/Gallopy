@@ -1,9 +1,11 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function Paragraph(
-    properties: React.HTMLAttributes<HTMLParagraphElement> & { text: string }
-) {
+export type ParagraphProps = React.HTMLAttributes<HTMLParagraphElement> & {
+    text: string;
+};
+
+export function Paragraph(properties: ParagraphProps) {
     return CustomElement(
         "p",
         Classes.PARAGRAPH,

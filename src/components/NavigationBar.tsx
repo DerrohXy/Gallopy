@@ -8,13 +8,13 @@ import {
 import React from "react";
 import { BiMenu } from "react-icons/bi";
 
-type NavigationBarState = {
+export type NavigationBarState = {
     drawerOpen: boolean;
     menuOpen: boolean;
     [key: string]: any;
 };
 
-type NavigationBarProps = React.HTMLAttributes<HTMLDivElement> & {
+export type NavigationBarProps = React.HTMLAttributes<HTMLDivElement> & {
     drawerContent?: any;
     menuContent?: any;
     content?: Array<any> | any;

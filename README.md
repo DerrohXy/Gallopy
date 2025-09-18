@@ -15,49 +15,60 @@ let exampleButton = <Button text={"Click Here!"}/>
 ##### Activity
 
 ```tsx
-import { Activity } from "gallopy/Activity";
+import { Activity, ActivityProps } from "gallopy/Activity";
 ```
 
 ##### Application
 
 ```tsx
-import { Application/ApplicationV2 } from "gallopy/Application";
+import {
+    Application,
+    ApplicationV2,
+    ApplicationProps,
+} from "gallopy/Application";
 ```
 
 ##### AudioView
 
 ```tsx
-import { AudioView } from "gallopy/AudioView";
+import { AudioView, AudioViewProps } from "gallopy/AudioView";
 ```
 
 ##### Button
 
 ```tsx
-import { Button } from "gallopy/Button";
+import { Button, ButtonProps } from "gallopy/Button";
 ```
 
 ##### Canvas
 
 ```tsx
-import { Canvas } from "gallopy/Canvas";
+import { Canvas, CanvasProps } from "gallopy/Canvas";
 ```
 
 ##### CollapseView
 
 ```tsx
-import { CollapseView } from "gallopy/CollapseView";
+import { CollapseView, CollapseViewProps } from "gallopy/CollapseView";
 ```
 
 ##### Controls
 
 ```tsx
-import { Switch, CheckButton, RadioGroup } from "gallopy/Controls";
+import {
+    Switch,
+    CheckButton,
+    RadioGroup,
+    SwitchProps,
+    CheckButtonProps,
+    RadioGroupProps,
+} from "gallopy/Controls";
 ```
 
 ##### FooterBar
 
 ```tsx
-import { FooterBar } from "gallopy/FooterBar";
+import { FooterBar, FooterBarProps } from "gallopy/FooterBar";
 ```
 
 ##### Headings
@@ -70,25 +81,20 @@ import {
     Heading4,
     Heading5,
     Heading6,
+    HeadingProps,
 } from "gallopy/Headings";
-```
-
-##### Icon
-
-```tsx
-import { Icon } from "gallopy/Icon";
 ```
 
 ##### IconButton
 
 ```tsx
-import { Canvas } from "gallopy/IconButton";
+import { IconButton, IconButtonProps } from "gallopy/IconButton";
 ```
 
 ##### ImageView
 
 ```tsx
-import { ImageView } from "gallopy/ImageView";
+import { ImageView, ImageViewProps } from "gallopy/ImageView";
 ```
 
 ##### Inputs
@@ -106,13 +112,15 @@ import {
     PasswordInput,
     ColorInput,
     FileInput,
+    InputProps,
+    TextAreaProps,
 } from "gallopy/Inputs";
 ```
 
 ##### Label
 
 ```tsx
-import { Label } from "gallopy/Label";
+import { Label, LabelProps } from "gallopy/Label";
 ```
 
 ##### Layout
@@ -124,49 +132,71 @@ import {
     FlowLayout,
     GridLayout,
     RelativeLayout,
+    LayoutProps,
 } from "gallopy/Layout";
 ```
 
 ##### Link
 
 ```tsx
-import { Link } from "gallopy/Link";
+import { Link, LinkProps } from "gallopy/Link";
 ```
 
 ##### Lists
 
 ```tsx
-import { UnorderedList, OrderedList, ListItem } from "gallopy/Lists";
+import {
+    UnorderedList,
+    OrderedList,
+    ListItem,
+    UnorderedListProps,
+    OrderedListProps,
+    ListItemProps,
+} from "gallopy/Lists";
 ```
 
 ##### Media
 
 ```tsx
-import { Embed, Iframe } from "gallopy/Media";
+import { Embed, Iframe, EmbedProps, IframeProps } from "gallopy/Media";
 ```
 
 ##### Menu
 
 ```tsx
-import { Menu, MenuBar, MenuItem } from "gallopy/Menu";
+import {
+    Menu,
+    MenuBar,
+    MenuItem,
+    MenuProps,
+    MenuBarProps,
+    MenuItemProps,
+} from "gallopy/Menu";
 ```
 
 ##### NavigationBar
 
 ```tsx
-import { NavigationBar } from "gallopy/NavigationBar";
+import { NavigationBar, NavigationBarProps } from "gallopy/NavigationBar";
 ```
 
 ##### Paragraph
 
 ```tsx
-import { Paragraph } from "gallopy/Paragraph";
+import { Paragraph, ParagraphProps } from "gallopy/Paragraph";
 ```
 
 ##### Progress
 
 ```tsx
-import { ProgressBar, Slider, ProgressIndicator } from "gallopy/Progress";
+import {
+    ProgressBar,
+    Slider,
+    ProgressIndicator,
+    SliderProps,
+    ProgressBarProps,
+    ProgressIndicatorProps,
+} from "gallopy/Progress";
 ```
 
 ##### Scroll
@@ -176,25 +206,26 @@ import {
     ScrollWindow,
     VerticalScrollWindow,
     HorizontalScrollWindow,
+    ScrollWindowProps,
 } from "gallopy/Scroll";
 ```
 
 ##### Selection
 
 ```tsx
-import { Select, Option } from "gallopy/Selection";
+import { Select, Option, SelectProps, OptionProps } from "gallopy/Selection";
 ```
 
 ##### SelectionView
 
 ```tsx
-import { SelectionView } from "gallopy/SelectionView";
+import { SelectionView, SelectionViewProps } from "gallopy/SelectionView";
 ```
 
 ##### TabbedWindow
 
 ```tsx
-import { TabbedWindow } from "gallopy/TabbedWindow";
+import { TabbedWindow, TabbedWindowProps } from "gallopy/TabbedWindow";
 ```
 
 ##### Table
@@ -209,11 +240,15 @@ import {
     TableData,
     TableHeader,
     Caption,
+    TableProps,
+    TableCellProps,
+    TableRowProps,
+    CaptionProps,
 } from "gallopy/Table";
 ```
 
 ##### VideoView
 
 ```tsx
-import { VideoView } from "gallopy/VideoView";
+import { VideoView, VideoViewProps } from "gallopy/VideoView";
 ```

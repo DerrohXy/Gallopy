@@ -3,7 +3,6 @@ export { Button } from "./Button";
 export { IconButton } from "./IconButton";
 export { Label } from "./Label";
 export { Paragraph } from "./Paragraph";
-export { Icon } from "./Icon";
 export {
     Heading1,
     Heading2,

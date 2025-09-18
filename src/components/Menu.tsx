@@ -121,16 +121,14 @@ export function Menu(properties: MenuProps) {
     return <Menu_ {...properties} />;
 }
 
-export function MenuBar(
-    properties: React.HTMLAttributes<HTMLDivElement>,
-    ...menus: Array<any>
-) {
+export type MenuBarProps = React.HTMLAttributes<HTMLDivElement>;
+
+export function MenuBar(properties: MenuBarProps, ...menus: Array<any>) {
     return CustomElement("div", Classes.MENU_BAR, {}, properties, ...menus);
 }
 
-export function MenuItem(
-    properties: React.HTMLAttributes<HTMLDivElement>,
-    ...children: Array<any>
-) {
+export type MenuItemProps = React.HTMLAttributes<HTMLDivElement>;
+
+export function MenuItem(properties: MenuItemProps, ...children: Array<any>) {
     return CustomElement("div", Classes.MENU_ITEM, {}, properties, ...children);
 }

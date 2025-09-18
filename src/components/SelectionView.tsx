@@ -6,12 +6,12 @@ import {
 } from "../core";
 import React from "react";
 
-type SelectionViewOptionItem = {
+export type SelectionViewOptionItem = {
     text?: string;
     content?: any;
 };
 
-type SelectionViewProps = React.HTMLAttributes<HTMLDivElement> & {
+export type SelectionViewProps = React.HTMLAttributes<HTMLDivElement> & {
     optionItems: Array<SelectionViewOptionItem>;
     onSelection: Function;
     dropdownStyle?: React.CSSProperties;

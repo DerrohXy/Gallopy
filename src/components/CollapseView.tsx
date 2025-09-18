@@ -7,7 +7,7 @@ import {
 import React from "react";
 import { BiCaretDown, BiCaretUp } from "react-icons/bi";
 
-type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
+export type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
     content?: Array<any> | any;
     title: any;
     titleBarStyle?: React.CSSProperties;
@@ -18,7 +18,7 @@ type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
     openIcon?: any;
 };
 
-type CollabpseViewState = {
+export type CollabpseViewState = {
     open: boolean;
     [key: string]: any;
 };

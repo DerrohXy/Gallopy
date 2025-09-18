@@ -1,9 +1,11 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function Heading1(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
+    text: string;
+};
+
+export function Heading1(properties: HeadingProps) {
     return CustomElement(
         "h1",
         Classes.HEADING,
@@ -13,9 +15,7 @@ export function Heading1(
     );
 }
 
-export function Heading2(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export function Heading2(properties: HeadingProps) {
     return CustomElement(
         "h2",
         Classes.HEADING,
@@ -25,9 +25,7 @@ export function Heading2(
     );
 }
 
-export function Heading3(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export function Heading3(properties: HeadingProps) {
     return CustomElement(
         "h3",
         Classes.HEADING,
@@ -37,9 +35,7 @@ export function Heading3(
     );
 }
 
-export function Heading4(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export function Heading4(properties: HeadingProps) {
     return CustomElement(
         "h4",
         Classes.HEADING,
@@ -49,9 +45,7 @@ export function Heading4(
     );
 }
 
-export function Heading5(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export function Heading5(properties: HeadingProps) {
     return CustomElement(
         "h5",
         Classes.HEADING,
@@ -61,9 +55,7 @@ export function Heading5(
     );
 }
 
-export function Heading6(
-    properties: React.HTMLAttributes<HTMLHeadingElement> & { text: string }
-) {
+export function Heading6(properties: HeadingProps) {
     return CustomElement(
         "h6",
         Classes.HEADING,

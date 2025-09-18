@@ -1,7 +1,9 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function TextInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export type InputProps = React.HTMLAttributes<HTMLInputElement>;
+
+export function TextInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.TEXT_INPUT,
@@ -12,9 +14,7 @@ export function TextInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function NumberInput(
-    properties: React.HTMLAttributes<HTMLInputElement>
-) {
+export function NumberInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.NUMBER_INPUT,
@@ -25,7 +25,7 @@ export function NumberInput(
     );
 }
 
-export function WeekInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function WeekInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.WEEK_INPUT,
@@ -36,7 +36,7 @@ export function WeekInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function TimeInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function TimeInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.TIME_INPUT,
@@ -47,7 +47,7 @@ export function TimeInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function MonthInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function MonthInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.MONTH_INPUT,
@@ -58,9 +58,7 @@ export function MonthInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function DatetimeInput(
-    properties: React.HTMLAttributes<HTMLInputElement>
-) {
+export function DatetimeInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.DATETIME_INPUT,
@@ -71,7 +69,7 @@ export function DatetimeInput(
     );
 }
 
-export function DateInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function DateInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.DATE_INPUT,
@@ -82,9 +80,9 @@ export function DateInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function TextArea(
-    properties: React.HTMLAttributes<HTMLTextAreaElement>
-) {
+export type TextAreaProps = React.HTMLAttributes<HTMLTextAreaElement>;
+
+export function TextArea(properties: TextAreaProps) {
     return CustomElement(
         "textarea",
         Classes.TEXT_AREA,
@@ -95,9 +93,7 @@ export function TextArea(
     );
 }
 
-export function PasswordInput(
-    properties: React.HTMLAttributes<HTMLInputElement>
-) {
+export function PasswordInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.PASSWORD_INPUT,
@@ -108,7 +104,7 @@ export function PasswordInput(
     );
 }
 
-export function ColorInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function ColorInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.COLOR_INPUT,
@@ -119,7 +115,7 @@ export function ColorInput(properties: React.HTMLAttributes<HTMLInputElement>) {
     );
 }
 
-export function FileInput(properties: React.HTMLAttributes<HTMLInputElement>) {
+export function FileInput(properties: InputProps) {
     return CustomElement(
         "input",
         Classes.FILE_INPUT,

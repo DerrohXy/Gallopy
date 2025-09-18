@@ -1,12 +1,12 @@
 import { CustomElement, LoadContent } from "../core";
 import { Classes } from "../core";
 
-export function Activity(
-    properties: React.HTMLAttributes<HTMLDivElement> & {
-        navigationBar?: any;
-        footerBar?: any;
-    }
-) {
+export type ActivityProps = React.HTMLAttributes<HTMLDivElement> & {
+    navigationBar?: any;
+    footerBar?: any;
+};
+
+export function Activity(properties: ActivityProps) {
     return CustomElement(
         "div",
         Classes.ACTIVITY,

@@ -1,16 +1,14 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export function Embed(
-    properties: React.HTMLAttributes<HTMLEmbedElement>,
-    ...children: Array<any>
-) {
+export type EmbedProps = React.HTMLAttributes<HTMLEmbedElement>;
+
+export function Embed(properties: EmbedProps, ...children: Array<any>) {
     return CustomElement("embed", Classes.EMBED, {}, properties, ...children);
 }
 
-export function Iframe(
-    properties: React.HTMLAttributes<HTMLIFrameElement>,
-    ...children: Array<any>
-) {
+export type IframeProps = React.HTMLAttributes<HTMLIFrameElement>;
+
+export function Iframe(properties: IframeProps, ...children: Array<any>) {
     return CustomElement("iframe", Classes.IFRAME, {}, properties, ...children);
 }

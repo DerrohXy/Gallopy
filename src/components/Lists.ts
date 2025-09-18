@@ -1,8 +1,10 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
+export type UnorderedListProps = React.HTMLAttributes<HTMLUListElement>;
+
 export function UnorderedList(
-    properties: React.HTMLAttributes<HTMLUListElement>,
+    properties: UnorderedListProps,
     ...listItems: Array<any>
 ) {
     return CustomElement(
@@ -14,8 +16,10 @@ export function UnorderedList(
     );
 }
 
+export type OrderedListProps = React.HTMLAttributes<HTMLOListElement>;
+
 export function OrderedList(
-    properties: React.HTMLAttributes<HTMLOListElement>,
+    properties: OrderedListProps,
     ...listItems: Array<any>
 ) {
     return CustomElement(
@@ -27,9 +31,8 @@ export function OrderedList(
     );
 }
 
-export function ListItem(
-    properties: React.HTMLAttributes<HTMLLIElement>,
-    ...children: Array<any>
-) {
+export type ListItemProps = React.HTMLAttributes<HTMLLIElement>;
+
+export function ListItem(properties: ListItemProps, ...children: Array<any>) {
     return CustomElement("li", Classes.LIST_ITEM, {}, properties, ...children);
 }

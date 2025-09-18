@@ -1,12 +1,13 @@
 import { Render } from "../core";
-type ApplicationRouter = (title: string) => any | null;
 
-type ApplicationProps = {
+export type ApplicationRouter = (title: string) => any | null;
+
+export type ApplicationProps = {
     router?: ApplicationRouter;
     baseElement?: HTMLElement;
 };
 
-type Application = {
+export type Application = {
     baseElement: HTMLElement;
     hashUpdateActive: boolean;
     router: ApplicationRouter;
@@ -54,7 +55,7 @@ export function Application(properties: ApplicationProps): Application {
     return application;
 }
 
-type ApplicationV2 = {
+export type ApplicationV2 = {
     baseElement: HTMLElement;
     pathUpdateActive: boolean;
     router: ApplicationRouter;
@@ -62,7 +63,7 @@ type ApplicationV2 = {
     openActivity: (title: string) => void;
 };
 
-export function ApplicationV2(properties: ApplicationV2) {
+export function ApplicationV2(properties: ApplicationProps) {
     let application: ApplicationV2 = {
         baseElement: properties.baseElement || document.body,
         pathUpdateActive: true,
