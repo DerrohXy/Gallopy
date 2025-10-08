@@ -5,7 +5,32 @@ import {
     LoadDefaultProperties,
 } from "../core";
 import React from "react";
-import { BiCaretDown, BiCaretUp } from "react-icons/bi";
+
+function closeIcon_() {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+        >
+            {"<"}
+        </div>
+    );
+}
+
+function openIcon_() {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+        >
+            {">"}
+        </div>
+    );
+}
 
 export type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
     content?: Array<any> | any;
@@ -75,12 +100,8 @@ function CollapseView_(properties: CollapseViewProps) {
             >
                 {props.title}
                 {state.open
-                    ? props.closeIcon || (
-                          <BiCaretUp style={iconStyle}></BiCaretUp>
-                      )
-                    : props.openIcon || (
-                          <BiCaretDown style={iconStyle}></BiCaretDown>
-                      )}
+                    ? props.closeIcon || closeIcon_()
+                    : props.openIcon || openIcon_()}
             </div>
             {!state.open ? null : (
                 <div

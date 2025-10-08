@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.15",
+    "version": "0.0.17",
     "author": {
         "name": "Derrick Wafula",
         "email": "derrickwafula1500@gmail.com",
@@ -11,12 +11,12 @@
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
     "exports": {
-        ".": {
-            "import": "./dist/index.esm.js",
-            "require": "./dist/index.js",
-            "types": "./dist/index.d.ts"
-        },
         "./styles": "./dist/index.css",
+        "./core": {
+            "import": "./dist/core.esm.js",
+            "require": "./dist/core.js",
+            "types": "./dist/core.d.ts"
+        },
         "./components": {
             "import": "./dist/components/index.esm.js",
             "require": "./dist/components/index.js",
@@ -179,8 +179,7 @@
     "license": "MIT",
     "peerDependencies": {
         "react": "^19.1.1",
-        "react-dom": "^19.1.1",
-        "react-icons": "^4.12.0"
+        "react-dom": "^19.1.1"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^28.0.1",

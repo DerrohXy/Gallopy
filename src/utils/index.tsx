@@ -1,3 +1,4 @@
+import React from "react";
 import {
     LoadContent,
     GetUniqueId,
@@ -5,7 +6,33 @@ import {
     Render,
     CustomEvents,
 } from "../core";
-import { BiXCircle, BiInfoSquare } from "react-icons/bi";
+
+function dialogIcon_() {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+        >
+            {">"}
+        </div>
+    );
+}
+
+function closeButton_(onClick: React.MouseEventHandler<HTMLDivElement>) {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+            onClick={onClick}
+        >
+            {"<"}
+        </div>
+    );
+}
 
 type ShowDialogProps = {
     duration?: number;
@@ -38,23 +65,15 @@ export function showDialog(properties: ShowDialogProps) {
         >
             {properties.splash ? null : (
                 <div className={Classes.DIALOG_TITLE_BAR}>
-                    {properties.icon || (
-                        <BiInfoSquare style={iconStyle}></BiInfoSquare>
-                    )}
+                    {properties.icon || dialogIcon_()}
                     <span className={Classes.DIALOG_TITLE}>
                         {properties.title || "..."}
                     </span>
-                    {properties.closeButton || (
-                        <BiXCircle
-                            style={iconStyle}
-                            onClick={(
-                                event: React.MouseEvent<SVGElement, MouseEvent>
-                            ) => {
-                                event.stopPropagation();
-                                closeDialog(dialogId);
-                            }}
-                        ></BiXCircle>
-                    )}
+                    {properties.closeButton ||
+                        closeButton_((event: React.MouseEvent) => {
+                            event.stopPropagation();
+                            closeDialog(dialogId);
+                        })}
                 </div>
             )}
             {...content}

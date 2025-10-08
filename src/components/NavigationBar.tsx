@@ -6,7 +6,19 @@ import {
     CustomEvents,
 } from "../core";
 import React from "react";
-import { BiMenu } from "react-icons/bi";
+
+function menuIcon_() {
+    return (
+        <div
+            style={{
+                padding: "15px",
+                margin: "5px",
+            }}
+        >
+            {">"}
+        </div>
+    );
+}
 
 export type NavigationBarState = {
     drawerOpen: boolean;
@@ -18,8 +30,8 @@ export type NavigationBarProps = React.HTMLAttributes<HTMLDivElement> & {
     drawerContent?: any;
     menuContent?: any;
     content?: Array<any> | any;
-    drawerButton?: any;
-    menuButton?: any;
+    drawerIcon?: any;
+    menuIcon?: any;
     navigationWindowStyle?: React.CSSProperties;
     drawerWindowStyle?: React.CSSProperties;
     menuWindowStyle?: React.CSSProperties;
@@ -62,8 +74,8 @@ function NavigationBar_(properties: NavigationBarProps) {
 
     let drawerContent: Array<any> = LoadContent(props.drawerContent),
         menuContent: Array<any> = LoadContent(props.menuContent),
-        drawerButton: any | undefined = props.drawerButton,
-        menuButton: any | undefined = props.menuButton,
+        drawerIcon: any | undefined = props.drawerIcon,
+        menuIcon: any | undefined = props.menuIcon,
         content: Array<any> = LoadContent(
             props.content || props.children || []
         );
@@ -98,11 +110,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                         });
                     }}
                 >
-                    {!drawerButton ? (
-                        <BiMenu style={iconStyle}></BiMenu>
-                    ) : (
-                        drawerButton
-                    )}
+                    {!drawerIcon ? menuIcon_() : drawerIcon}
                 </div>
             )}
             {...content}
@@ -118,11 +126,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                         });
                     }}
                 >
-                    {!menuButton ? (
-                        <BiMenu style={iconStyle}></BiMenu>
-                    ) : (
-                        menuButton
-                    )}
+                    {!menuIcon ? menuIcon_() : menuIcon}
                 </div>
             )}
             {(drawerContent.length < 1 && menuContent.length < 1) ||
