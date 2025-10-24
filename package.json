@@ -1,6 +1,6 @@
 {
     "name": "gallopy",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "author": {
         "name": "Derrick Wafula",
         "email": "derrickwafula1500@gmail.com",
@@ -16,11 +16,6 @@
             "import": "./dist/core.esm.js",
             "require": "./dist/core.js",
             "types": "./dist/core.d.ts"
-        },
-        "./components": {
-            "import": "./dist/components/index.esm.js",
-            "require": "./dist/components/index.js",
-            "types": "./dist/components/index.d.ts"
         },
         "./utils": {
             "import": "./dist/utils/index.esm.js",

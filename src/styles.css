@@ -256,10 +256,10 @@ textarea {
     justify-content: center;
     text-align: center;
     flex-wrap: nowrap;
-    min-height: 30px;
     margin: 3px;
-    padding-left: 5px;
-    padding-right: 10px;
+    min-height: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
     border: 1px solid darkgray;
 }
 
@@ -269,10 +269,10 @@ textarea {
     align-items: center;
     text-align: center;
     flex-wrap: nowrap;
-    min-height: 30px;
     margin: 3px;
-    padding-left: 5px;
-    padding-right: 10px;
+    min-height: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
     border: 1px solid darkgray;
 }
 

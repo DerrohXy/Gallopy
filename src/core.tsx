@@ -23,7 +23,7 @@ export function GetUniqueId(): string {
  */
 export function RemoveFields(
     object: { [key: string]: any },
-    fields: Array<string>
+    fields: Array<string>,
 ) {
     let newObject: { [key: string]: any } = {};
 
@@ -62,7 +62,7 @@ export function LoadContent(content: Array<any> | any): Array<any> {
 
 export function LoadDefaultProperties(
     defaultProperties: { [key: string]: any },
-    properties: { [key: string]: any }
+    properties: { [key: string]: any },
 ) {
     return Object.assign(defaultProperties, properties);
 }
@@ -105,7 +105,7 @@ export function CustomElement(
             className: className,
             style: style,
         },
-        ...parsedChildren
+        ...parsedChildren,
     );
 }
 
