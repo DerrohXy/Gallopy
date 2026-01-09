@@ -96,7 +96,7 @@ export default [
     },
     // Core bundle
     {
-        input: "src/core.tsx",
+        input: "src/core.ts",
         output: [
             {
                 file: "dist/core.js",
@@ -120,7 +120,7 @@ export default [
     },
     // Utils bundle
     {
-        input: "src/utils/index.tsx",
+        input: "src/utils/index.ts",
         output: [
             {
                 file: "dist/utils/index.js",

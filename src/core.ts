@@ -1,4 +1,4 @@
-import React from "react";
+import { createElement, HTMLAttributes, ReactNode } from "react";
 import { Container, createRoot } from "react-dom/client";
 
 /**
@@ -23,7 +23,7 @@ export function GetUniqueId(): string {
  */
 export function RemoveFields(
     object: { [key: string]: any },
-    fields: Array<string>,
+    fields: Array<string>
 ) {
     let newObject: { [key: string]: any } = {};
 
@@ -62,7 +62,7 @@ export function LoadContent(content: Array<any> | any): Array<any> {
 
 export function LoadDefaultProperties(
     defaultProperties: { [key: string]: any },
-    properties: { [key: string]: any },
+    properties: { [key: string]: any }
 ) {
     return Object.assign(defaultProperties, properties);
 }
@@ -72,14 +72,14 @@ export function CreateElement(
     properties: { [key: string]: any },
     ...children: Array<any>
 ) {
-    return React.createElement(tag, properties, ...Spread(children));
+    return createElement(tag, properties, ...Spread(children));
 }
 
 export function CustomElement(
     tag: any,
     customClass: string,
     customProperties: { [key: string]: any },
-    properties: React.HTMLAttributes<{}>,
+    properties: HTMLAttributes<{}>,
     ...children: Array<any>
 ) {
     let className = properties.className
@@ -105,11 +105,11 @@ export function CustomElement(
             className: className,
             style: style,
         },
-        ...parsedChildren,
+        ...parsedChildren
     );
 }
 
-export function Render(component: React.ReactNode, element: Container) {
+export function Render(component: ReactNode, element: Container) {
     return createRoot(element).render(component);
 }
 

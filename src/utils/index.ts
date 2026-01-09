@@ -1,36 +1,37 @@
-import React from "react";
+import { CSSProperties } from "react";
 import {
     LoadContent,
     GetUniqueId,
     Classes,
     Render,
     CustomEvents,
+    CreateElement,
 } from "../core";
 
 function dialogIcon_() {
-    return (
-        <div
-            style={{
+    return CreateElement(
+        "div",
+        {
+            style: {
                 padding: "10px",
                 margin: "5px",
-            }}
-        >
-            {">"}
-        </div>
+            },
+        },
+        ">"
     );
 }
 
-function closeButton_(onClick: React.MouseEventHandler<HTMLDivElement>) {
-    return (
-        <div
-            style={{
+function closeButton_(onClick: Function) {
+    return CreateElement(
+        "div",
+        {
+            style: {
                 padding: "10px",
                 margin: "5px",
-            }}
-            onClick={onClick}
-        >
-            {"<"}
-        </div>
+            },
+            onClick: onClick,
+        },
+        "<"
     );
 }
 
@@ -40,8 +41,8 @@ type ShowDialogProps = {
     splash?: boolean;
     title?: string;
     closeOnClickOutside?: boolean;
-    style?: React.CSSProperties;
-    titleBarStyle?: React.CSSProperties;
+    style?: CSSProperties;
+    titleBarStyle?: CSSProperties;
     closeButton?: any;
     icon?: any;
 };
@@ -55,29 +56,35 @@ export function showDialog(properties: ShowDialogProps) {
 
     let iconStyle = { fontSize: "25px", margin: "5px" };
 
-    let element = (
-        <div
-            className={Classes.DIALOG}
-            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    let element = CreateElement(
+        "div",
+        {
+            className: Classes.DIALOG,
+            onClick: (event: Event) => {
                 event.stopPropagation();
-            }}
-            style={properties.style || {}}
-        >
-            {properties.splash ? null : (
-                <div className={Classes.DIALOG_TITLE_BAR}>
-                    {properties.icon || dialogIcon_()}
-                    <span className={Classes.DIALOG_TITLE}>
-                        {properties.title || "..."}
-                    </span>
-                    {properties.closeButton ||
-                        closeButton_((event: React.MouseEvent) => {
-                            event.stopPropagation();
-                            closeDialog(dialogId);
-                        })}
-                </div>
-            )}
-            {...content}
-        </div>
+            },
+            style: properties.style || {},
+        },
+        properties.splash
+            ? null
+            : CreateElement(
+                  "div",
+                  { className: Classes.DIALOG_TITLE_BAR },
+                  properties.icon || dialogIcon_(),
+                  CreateElement(
+                      "span",
+                      {
+                          className: Classes.DIALOG_TITLE,
+                      },
+                      properties.title || "..."
+                  ),
+                  properties.closeButton ||
+                      closeButton_((event: Event) => {
+                          event.stopPropagation();
+                          closeDialog(dialogId);
+                      })
+              ),
+        ...content
     );
 
     baseElement.classList.add(Classes.DIALOG_WINDOW);
@@ -122,15 +129,15 @@ export function showNotification(properties: ShowNotificationProps): string {
 
     let baseElement = document.createElement("div");
 
-    let element = (
-        <div
-            className={Classes.NOTIFICATION}
-            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    let element = CreateElement(
+        "div",
+        {
+            onClick: (event: Event) => {
                 event.stopPropagation();
-            }}
-        >
-            {...content}
-        </div>
+            },
+            className: Classes.NOTIFICATION,
+        },
+        ...content
     );
 
     baseElement.setAttribute("notification-id", notificationId);
@@ -157,7 +164,7 @@ export function closeNotification(notificationId: string) {
 type ShowToastProps = {
     text: string;
     duration?: number;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
 };
 
 export function showToast(properties: ShowToastProps): string | null {
