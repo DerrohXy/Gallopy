@@ -62,7 +62,7 @@ const plugins = [
 ];
 
 export default [
-    // Main bundle
+    //Main bundle
     {
         input: "src/index.ts",
         output: [
@@ -87,7 +87,7 @@ export default [
                 brotliSize: true,
             }),
         ],
-        external: ["react", "react-dom", "react/jsx-runtime"],
+        // external: ["react", "react-dom", "react/jsx-runtime"],
         treeshake: {
             moduleSideEffects: false,
             propertyReadSideEffects: false,

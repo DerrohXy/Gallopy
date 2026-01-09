@@ -7,9 +7,6 @@
         "url": "https://github.com/DerrohXy"
     },
     "description": "Custom library of UI common UI components. Build for React.",
-    "main": "dist/index.js",
-    "module": "dist/index.esm.js",
-    "types": "dist/index.d.ts",
     "exports": {
         "./styles": "./dist/index.css",
         "./core": {

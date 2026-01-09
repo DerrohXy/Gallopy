@@ -1,8 +1,8 @@
-// Main entry point with tree-shakeable exports
+// // Main entry point with tree-shakeable exports
 import "./styles.css";
 
-// Core functionality
-export * from "./core";
+// // Core functionality
+// export * from "./core";
 
-// Utilities
-export * from "./utils";
+// // Utilities
+// export * from "./utils";
