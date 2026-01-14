@@ -1,0 +1,1 @@
+{"version":3,"file":"Activity.d.ts","sourceRoot":"","sources":["../../src/components/Activity.tsx"],"names":[],"mappings":"AAGA,MAAM,MAAM,aAAa,GAAG,KAAK,CAAC,cAAc,CAAC,cAAc,CAAC,GAAG;IAC/D,aAAa,CAAC,EAAE,GAAG,CAAC;IACpB,SAAS,CAAC,EAAE,GAAG,CAAC;CACnB,CAAC;AAEF,wBAAgB,QAAQ,CAAC,UAAU,EAAE,aAAa,qHAejD"}

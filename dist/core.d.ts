@@ -1,0 +1,418 @@
+import { HTMLAttributes, ReactNode } from "react";
+import { Container } from "react-dom/client";
+/**
+ * Suposedly generates a unique string
+ * @returns The unique string.
+ */
+export declare function GetUniqueId(): string;
+/**
+ * Removes specified field names from an object
+ * @param object
+ * @param fields
+ * @returns
+ */
+export declare function RemoveFields(object: {
+    [key: string]: any;
+}, fields: Array<string>): {
+    [key: string]: any;
+};
+export declare function Spread(items: Array<any>): Array<any>;
+/**
+ * Asserts values are provied as an array
+ * @param content
+ * @returns
+ */
+export declare function LoadContent(content: Array<any> | any): Array<any>;
+export declare function LoadDefaultProperties(defaultProperties: {
+    [key: string]: any;
+}, properties: {
+    [key: string]: any;
+}): {
+    [key: string]: any;
+} & {
+    [key: string]: any;
+};
+export declare function CreateElement(tag: any, properties: {
+    [key: string]: any;
+}, ...children: Array<any>): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+export declare function CustomElement(tag: any, customClass: string, customProperties: {
+    [key: string]: any;
+}, properties: HTMLAttributes<{}>, ...children: Array<any>): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+export declare function Render(component: ReactNode, element: Container): void;
+export declare const Colors: {
+    ALICE_BLUE: string;
+    ANTIQUE_WHITE: string;
+    AQUA: string;
+    AQUAMARINE: string;
+    AZURE: string;
+    BEIGE: string;
+    BISQUE: string;
+    BLACK: string;
+    BLACK1: string;
+    BLACK2: string;
+    BLACK3: string;
+    BLACK4: string;
+    BLACK5: string;
+    BLANCHED_ALMOND: string;
+    BLUE: string;
+    BLUE1: string;
+    BLUE2: string;
+    BLUE3: string;
+    BLUE4: string;
+    BLUE5: string;
+    BLUE_GREEN: string;
+    BLUE_VIOLET: string;
+    BRIGHT_BLUE: string;
+    BROWN: string;
+    BROWN1: string;
+    BROWN2: string;
+    BROWN3: string;
+    BROWN4: string;
+    BROWN5: string;
+    BURLY_WOOD: string;
+    BURNT_ORANGE: string;
+    CADET_BLUE: string;
+    CHARCOAL: string;
+    CHARTREUSE: string;
+    CHERRY_RED: string;
+    CHOCOLATE: string;
+    CLASSIC_BLUE: string;
+    CLASSIC_PINK: string;
+    CLASSIC_YELLOW: string;
+    CORAL: string;
+    CORNFLOWER_BLUE: string;
+    CORNSILK: string;
+    CRIMSON: string;
+    CYAN: string;
+    DARK_BLUE: string;
+    DARK_CYAN: string;
+    DARK_GOLDEN_ROD: string;
+    DARK_GRAY: string;
+    DARK_GREEN: string;
+    DARK_GREY: string;
+    DARK_KHAKI: string;
+    DARK_MAGENTA: string;
+    DARK_OLIVE_GREEN: string;
+    DARK_ORANGE: string;
+    DARK_ORCHID: string;
+    DARK_RED: string;
+    DARK_SALMON: string;
+    DARK_SAND: string;
+    DARK_SEA_GREEN: string;
+    DARK_SLATE_BLUE: string;
+    DARK_SLATE_GRAY: string;
+    DARK_SLATE_GREY: string;
+    DARK_TURQUOISE: string;
+    DARK_VIOLET: string;
+    DEEP_PINK: string;
+    DEEP_SKY_BLUE: string;
+    DIM_GRAY: string;
+    DIM_GREY: string;
+    DODGER_BLUE: string;
+    DUSTY_WHITE: string;
+    ELECTRIC_BLUE: string;
+    FIRE_BRICK: string;
+    FLORAL_WHITE: string;
+    FOREST_GREEN: string;
+    FREEZE_PURPLE: string;
+    FUCHSIA: string;
+    GAINSBORO: string;
+    GHOST_WHITE: string;
+    GOLD: string;
+    GOLDEN_ROD: string;
+    GRAY: string;
+    GRAY1: string;
+    GRAY2: string;
+    GRAY3: string;
+    GRAY4: string;
+    GRAY5: string;
+    GREEN: string;
+    GREEN1: string;
+    GREEN2: string;
+    GREEN3: string;
+    GREEN4: string;
+    GREEN5: string;
+    GREEN_YELLOW: string;
+    GREY: string;
+    HEAVY_PURPLE: string;
+    HONEY_DEW: string;
+    HOT_PINK: string;
+    ICE_COLD: string;
+    INDIAN_RED: string;
+    INDIGO: string;
+    ISLAND_GREEN: string;
+    IVORY: string;
+    KHAKI: string;
+    LAVENDER: string;
+    LAVENDER_BLUSH: string;
+    LAWN_GREEN: string;
+    LEMON_CHIFFON: string;
+    LIGHT_BLUE: string;
+    LIGHT_CORAL: string;
+    LIGHT_CYAN: string;
+    LIGHT_GOLDEN_ROD_YELLOW: string;
+    LIGHT_GRAY: string;
+    LIGHT_GREEN: string;
+    LIGHT_GREY: string;
+    LIGHT_OLIVE: string;
+    LIGHT_PINK: string;
+    LIGHT_SALMON: string;
+    LIGHT_SEA_GREEN: string;
+    LIGHT_SKY_BLUE: string;
+    LIGHT_SLATE_GRAY: string;
+    LIGHT_SLATE_GREY: string;
+    LIGHT_STEEL_BLUE: string;
+    LIGHT_TEAL: string;
+    LIGHT_YELLOW: string;
+    LIME: string;
+    LIME_GREEN: string;
+    LINEN: string;
+    MAGENTA: string;
+    MAROON: string;
+    MEDIUM_AQUA_MARINE: string;
+    MEDIUM_BLUE: string;
+    MEDIUM_ORCHID: string;
+    MEDIUM_PURPLE: string;
+    MEDIUM_SEA_GREEN: string;
+    MEDIUM_SLATE_BLUE: string;
+    MEDIUM_SPRING_GREEN: string;
+    MEDIUM_TURQUOISE: string;
+    MEDIUM_VIOLET_RED: string;
+    MIDNIGHT_BLUE: string;
+    MINT_CREAM: string;
+    MISTY_ROSE: string;
+    MOCCASIN: string;
+    MUSTARD: string;
+    NAVAJO_WHITE: string;
+    NAVY: string;
+    OFF_WHITE: string;
+    OLD_LACE: string;
+    OLIVE: string;
+    OLIVE_DRAB: string;
+    ORANGE: string;
+    ORANGE1: string;
+    ORANGE2: string;
+    ORANGE3: string;
+    ORANGE4: string;
+    ORANGE5: string;
+    ORANGE_RED: string;
+    ORCHID: string;
+    PALE_GOLDEN_ROD: string;
+    PALE_GREEN: string;
+    PALE_TURQUOISE: string;
+    PALE_VIOLET_RED: string;
+    PAPAYA_WHIP: string;
+    PEACH: string;
+    PEACH_PUFF: string;
+    PERU: string;
+    PINK: string;
+    PINK_SAND: string;
+    PLUM: string;
+    POWDER_BLUE: string;
+    PURPLE: string;
+    PURPLE1: string;
+    PURPLE2: string;
+    PURPLE3: string;
+    PURPLE4: string;
+    PURPLE5: string;
+    PURPLE_PAIN: string;
+    RASPBERRY: string;
+    REBECCA_PURPLE: string;
+    RED: string;
+    RED1: string;
+    RED2: string;
+    RED3: string;
+    RED4: string;
+    RED5: string;
+    ROSY_BROWN: string;
+    ROYAL_BLUE: string;
+    SADDLE_BROWN: string;
+    SAGE: string;
+    SALMON: string;
+    SANDY_BROWN: string;
+    SCARLET: string;
+    SEA_GREEN: string;
+    SEA_SHELL: string;
+    SIENNA: string;
+    SILVER: string;
+    SKY_BLUE: string;
+    SLATE_BLUE: string;
+    SLATE_GRAY: string;
+    SLATE_GREY: string;
+    SNOW: string;
+    SPICED_APPLE: string;
+    SPRING_GREEN: string;
+    STEEL_BLUE: string;
+    TAN: string;
+    TEAL: string;
+    THISTLE: string;
+    TOMATO: string;
+    TURQUOISE: string;
+    VERDANT_GREEN: string;
+    VIOLET: string;
+    WHEAT: string;
+    WHITE: string;
+    WHITE1: string;
+    WHITE2: string;
+    WHITE3: string;
+    WHITE4: string;
+    WHITE5: string;
+    WHITE_SMOKE: string;
+    YELLOW: string;
+    YELLOW1: string;
+    YELLOW2: string;
+    YELLOW3: string;
+    YELLOW4: string;
+    YELLOW5: string;
+    YELLOW_GREEN: string;
+};
+/**
+ * CSS classes for animantion(type)
+ */
+type AnimationClasses = {
+    PULSATING: string;
+    SPINNING: string;
+    SLIDE_IN_LEFT: string;
+    SLIDE_IN_LEFT_SLOW: string;
+    SLIDE_IN_LEFT_FAST: string;
+    SLIDE_OUT_LEFT: string;
+    SLIDE_OUT_LEFT_SLOW: string;
+    SLIDE_OUT_LEFT_FAST: string;
+    SLIDE_IN_RIGHT: string;
+    SLIDE_IN_RIGHT_SLOW: string;
+    SLIDE_IN_RIGHT_FAST: string;
+    SLIDE_OUT_RIGHT: string;
+    SLIDE_OUT_RIGHT_SLOW: string;
+    SLIDE_OUT_RIGHT_FAST: string;
+    SLIDE_IN_TOP: string;
+    SLIDE_IN_TOP_SLOW: string;
+    SLIDE_IN_TOP_FAST: string;
+    SLIDE_OUT_TOP: string;
+    SLIDE_OUT_TOP_FAST: string;
+    SLIDE_OUT_TOP_SLOW: string;
+    SLIDE_IN_BOTTOM: string;
+    SLIDE_IN_BOTTOM_SLOW: string;
+    SLIDE_IN_BOTTOM_FAST: string;
+    SLIDE_OUT_BOTTOM: string;
+    SLIDE_OUT_BOTTOM_SLOW: string;
+    SLIDE_OUT_BOTTOM_FAST: string;
+};
+/**
+ * Predefined custom component class names(type)
+ */
+type ComponentClasses = {
+    HIDDEN: string;
+    BUTTON: string;
+    ICON_BUTTON: string;
+    LABEL: string;
+    PARAGRAPH: string;
+    ICON: string;
+    HEADING: string;
+    LINK: string;
+    IMAGE_VIEW: string;
+    VIDEO_VIEW: string;
+    AUDIO_VIEW: string;
+    TEXT_INPUT: string;
+    NUMBER_INPUT: string;
+    WEEK_INPUT: string;
+    TIME_INPUT: string;
+    MONTH_INPUT: string;
+    DATETIME_INPUT: string;
+    DATE_INPUT: string;
+    TEXT_AREA: string;
+    PASSWORD_INPUT: string;
+    COLOR_INPUT: string;
+    FILE_INPUT: string;
+    SELECTION: string;
+    OPTION: string;
+    SELECTION_VIEW: string;
+    SELECTION_VIEW_ACTIVE: string;
+    SELECTION_VIEW_DROPDOWN: string;
+    OPTION_ITEM: string;
+    PROGRESS_BAR: string;
+    SLIDER: string;
+    SPINNING_LOADER: string;
+    CHECK_BUTTON: string;
+    CHECK_BUTTON_CHECK_BOX: string;
+    CHECK_BUTTON_CHECK_BOX_CHECKED: string;
+    RADIO_GROUP: string;
+    VERTICAL_RADIO_GROUP: string;
+    RADIO_BUTTON: string;
+    RADIO_BUTTON_CHECK_BOX: string;
+    RADIO_BUTTON_CHECK_BOX_CHECKED: string;
+    SWITCH: string;
+    SWITCH_ACTIVE: string;
+    SWITCH_TOGGLE: string;
+    SWITCH_TOGGLE_ACTIVE: string;
+    MENU: string;
+    MENU_ACTIVE: string;
+    MENU_DROPDOWN: string;
+    MENU_ITEM: string;
+    MENU_BAR: string;
+    TABBED_WINDOW: string;
+    VERTICAL_TABBED_WINDOW: string;
+    TABBED_WINDOW_TITLE_BAR: string;
+    VERTICAL_TABBED_WINDOW_TITLE_BAR: string;
+    TABBED_WINDOW_TITLE: string;
+    TABBED_WINDOW_TITLE_ACTIVE: string;
+    TABBED_WINDOW_CONTENT: string;
+    TABBED_WINDOW_TITLE_BAR_CENTERED: string;
+    TABBED_WINDOW_TITLE_BAR_SPACED: string;
+    TABBED_WINDOW_TITLE_BAR_RIGHT: string;
+    CANVAS: string;
+    COLLAPSE_VIEW: string;
+    COLLAPSE_VIEW_TITLE_BAR: string;
+    COLLAPSE_VIEW_TITLE_BAR_ACTIVE: string;
+    COLLAPSE_VIEW_CONTENT: string;
+    ORDERED_LIST: string;
+    UNORDERED_LIST: string;
+    LIST_ITEM: string;
+    TABLE: string;
+    TABLE_HEADING: string;
+    TABLE_FOOTER: string;
+    TABLE_BODY: string;
+    TABLE_ROW: string;
+    TABLE_DATA: string;
+    TABLE_HEADER: string;
+    CAPTION: string;
+    EMBED: string;
+    IFRAME: string;
+    VERTICAL_LAYOUT: string;
+    HORIZONTAL_LAYOUT: string;
+    FLOW_LAYOUT: string;
+    GRID_LAYOUT: string;
+    RELATIVE_LAYOUT: string;
+    SCROLL_WINDOW: string;
+    VERTICAL_SCROLL_WINDOW: string;
+    HORIZONTAL_SCROLL_WINDOW: string;
+    NAVIGATION_BAR: string;
+    NAVIGATION_BAR_NAVIGATION_WINDOW: string;
+    NAVIGATION_BAR_DRAWER_WINDOW: string;
+    NAVIGATION_BAR_MENU_WINDOW: string;
+    FOOTER_BAR: string;
+    ACTIVITY: string;
+    DIALOG: string;
+    DIALOG_TITLE: string;
+    DIALOG_WINDOW: string;
+    DIALOG_TITLE_BAR: string;
+    NOTIFICATION: string;
+    TOAST: string;
+    [key: string]: string;
+};
+/**
+ * CSS animation class names
+ */
+export declare const AnimationClasses: AnimationClasses;
+/**
+ * Combined component and CSS animation class names
+ */
+export declare const Classes: ComponentClasses;
+export declare const CustomEvents: {
+    WINDOW_CLICK: string;
+    WINDOW_SCROLL: string;
+    CLOSE_MENU_REQUEST: string;
+    CLOSE_DRAWERS_REQUEST: string;
+};
+export declare function Initialize(): void;
+export {};
+//# sourceMappingURL=core.d.ts.map
