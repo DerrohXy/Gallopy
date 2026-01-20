@@ -1,7 +1,9 @@
 import { CustomElement } from "../core";
 import { Classes } from "../core";
 
-export type VideoViewProps = React.HTMLAttributes<HTMLVideoElement>;
+export type VideoViewProps = React.HTMLAttributes<HTMLVideoElement> & {
+    src?: string;
+};
 
 export function VideoView(properties: VideoViewProps, ...children: Array<any>) {
     return CustomElement(
@@ -11,6 +13,6 @@ export function VideoView(properties: VideoViewProps, ...children: Array<any>) {
             controls: true,
         },
         properties,
-        ...children
+        ...children,
     );
 }

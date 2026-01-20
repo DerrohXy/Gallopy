@@ -4,6 +4,7 @@ import { Classes } from "../core";
 export type ActivityProps = React.HTMLAttributes<HTMLDivElement> & {
     navigationBar?: any;
     footerBar?: any;
+    childContent: any;
 };
 
 export function Activity(properties: ActivityProps) {
@@ -17,8 +18,8 @@ export function Activity(properties: ActivityProps) {
             },
         },
         properties,
-        ...LoadContent(properties.content),
+        ...LoadContent(properties.childContent),
         properties.footerBar,
-        properties.navigationBar
+        properties.navigationBar,
     );
 }

@@ -29,7 +29,7 @@ export type NavigationBarState = {
 export type NavigationBarProps = React.HTMLAttributes<HTMLDivElement> & {
     drawerContent?: any;
     menuContent?: any;
-    content?: Array<any> | any;
+    childContent?: Array<any> | any;
     drawerIcon?: any;
     menuIcon?: any;
     navigationWindowStyle?: React.CSSProperties;
@@ -55,7 +55,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                 drawerWindowStyle: {},
                 menuWindowStyle: {},
             },
-            properties
+            properties,
         );
     let [initialized, setInitialized] = React.useState(false);
 
@@ -77,7 +77,7 @@ function NavigationBar_(properties: NavigationBarProps) {
         drawerIcon: any | undefined = props.drawerIcon,
         menuIcon: any | undefined = props.menuIcon,
         content: Array<any> = LoadContent(
-            props.content || props.children || []
+            props.childContent || props.children || [],
         );
 
     let iconStyle = { fontSize: "35px", margin: "5px" };
@@ -101,7 +101,7 @@ function NavigationBar_(properties: NavigationBarProps) {
             {drawerContent.length < 1 ? null : (
                 <div
                     onClick={(
-                        event: React.MouseEvent<HTMLDivElement, MouseEvent>
+                        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
                     ) => {
                         event.stopPropagation();
                         setState({
@@ -117,7 +117,7 @@ function NavigationBar_(properties: NavigationBarProps) {
             {menuContent.length < 1 ? null : (
                 <div
                     onClick={(
-                        event: React.MouseEvent<HTMLDivElement, MouseEvent>
+                        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
                     ) => {
                         event.stopPropagation();
                         setState({
@@ -134,7 +134,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                 <div
                     className={Classes.NAVIGATION_BAR_NAVIGATION_WINDOW}
                     onClick={(
-                        event: React.MouseEvent<HTMLDivElement, MouseEvent>
+                        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
                     ) => {
                         event.stopPropagation();
                         setState({
@@ -151,7 +151,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                                 event: React.MouseEvent<
                                     HTMLDivElement,
                                     MouseEvent
-                                >
+                                >,
                             ) => {
                                 event.stopPropagation();
                             }}
@@ -167,7 +167,7 @@ function NavigationBar_(properties: NavigationBarProps) {
                                 event: React.MouseEvent<
                                     HTMLDivElement,
                                     MouseEvent
-                                >
+                                >,
                             ) => {
                                 event.stopPropagation();
                             }}

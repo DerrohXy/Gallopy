@@ -21,7 +21,7 @@ export type TabbedWindowState = {
 
 export type TabbedWindowTab = {
     title: any;
-    content: any;
+    childContent: any;
 };
 
 function TabbedWindow_(properties: TabbedWindowProps) {
@@ -38,7 +38,7 @@ function TabbedWindow_(properties: TabbedWindowProps) {
                 contentStyle: {},
                 onTabSelection: () => {},
             },
-            properties
+            properties,
         ) as TabbedWindowProps;
 
     let titleBarClass: string = {
@@ -92,7 +92,7 @@ function TabbedWindow_(properties: TabbedWindowProps) {
                                 event: React.MouseEvent<
                                     HTMLDivElement,
                                     MouseEvent
-                                >
+                                >,
                             ) => {
                                 event.stopPropagation();
                                 setState({ currentTabIndex: index });
@@ -109,7 +109,7 @@ function TabbedWindow_(properties: TabbedWindowProps) {
                 className={Classes.TABBED_WINDOW_CONTENT}
                 style={props.contentStyle}
             >
-                {currentTab ? currentTab.content : null}
+                {currentTab ? currentTab.childContent : null}
             </div>
         </div>
     );

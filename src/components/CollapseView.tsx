@@ -33,7 +33,7 @@ function openIcon_() {
 }
 
 export type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
-    content?: Array<any> | any;
+    childContent?: Array<any> | any;
     title: any;
     titleBarStyle?: React.CSSProperties;
     contentStyle?: React.CSSProperties;
@@ -62,7 +62,7 @@ function CollapseView_(properties: CollapseViewProps) {
                 content: null,
                 onCollapse: () => {},
             },
-            properties
+            properties,
         ) as CollapseViewProps;
 
     let iconStyle = { fontSize: "20px", margin: "3px" };
@@ -90,7 +90,7 @@ function CollapseView_(properties: CollapseViewProps) {
                         : Classes.COLLAPSE_VIEW_TITLE_BAR
                 }
                 onClick={(
-                    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+                    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
                 ) => {
                     event.stopPropagation();
                     props.onCollapse?.(!state.open);
@@ -108,7 +108,7 @@ function CollapseView_(properties: CollapseViewProps) {
                     className={Classes.COLLAPSE_VIEW_CONTENT}
                     style={props.contentStyle}
                 >
-                    {...LoadContent(props.content)}
+                    {...LoadContent(props.childContent)}
                 </div>
             )}
         </div>

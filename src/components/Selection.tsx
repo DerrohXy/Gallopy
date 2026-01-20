@@ -9,12 +9,15 @@ export function Select(properties: SelectProps, ...options: Array<any>) {
         Classes.SELECTION,
         {},
         properties,
-        ...options
+        ...options,
     );
 }
 
 export type OptionProps = React.HTMLAttributes<HTMLOptionElement> & {
     text?: string;
+    value?: string;
+    selected?: boolean;
+    disabled?: boolean;
 };
 
 export function Option(properties: OptionProps) {
@@ -23,6 +26,6 @@ export function Option(properties: OptionProps) {
         Classes.OPTION,
         {},
         properties,
-        properties.text || ""
+        properties.text || "",
     );
 }
