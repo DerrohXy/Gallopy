@@ -17,7 +17,7 @@ function dialogIcon_() {
                 margin: "5px",
             },
         },
-        ">"
+        ">",
     );
 }
 
@@ -31,13 +31,13 @@ function closeButton_(onClick: Function) {
             },
             onClick: onClick,
         },
-        "<"
+        "<",
     );
 }
 
 type ShowDialogProps = {
     duration?: number;
-    content: Array<any> | any;
+    childContent: Array<any> | any;
     splash?: boolean;
     title?: string;
     closeOnClickOutside?: boolean;
@@ -50,7 +50,7 @@ type ShowDialogProps = {
 export function showDialog(properties: ShowDialogProps) {
     closeDialogs();
 
-    let content = LoadContent(properties.content),
+    let content = LoadContent(properties.childContent),
         dialogId = GetUniqueId(),
         baseElement = document.createElement("div");
 
@@ -76,15 +76,15 @@ export function showDialog(properties: ShowDialogProps) {
                       {
                           className: Classes.DIALOG_TITLE,
                       },
-                      properties.title || "..."
+                      properties.title || "...",
                   ),
                   properties.closeButton ||
                       closeButton_((event: Event) => {
                           event.stopPropagation();
                           closeDialog(dialogId);
-                      })
+                      }),
               ),
-        ...content
+        ...content,
     );
 
     baseElement.classList.add(Classes.DIALOG_WINDOW);
@@ -118,13 +118,13 @@ export function closeDialog(dialogId: string) {
 
 type ShowNotificationProps = {
     duration?: number;
-    content: Array<any> | any;
+    childContent: Array<any> | any;
 };
 
 export function showNotification(properties: ShowNotificationProps): string {
     closeNotifications();
 
-    let content = LoadContent(properties.content),
+    let content = LoadContent(properties.childContent),
         notificationId = GetUniqueId();
 
     let baseElement = document.createElement("div");
@@ -137,7 +137,7 @@ export function showNotification(properties: ShowNotificationProps): string {
             },
             className: Classes.NOTIFICATION,
         },
-        ...content
+        ...content,
     );
 
     baseElement.setAttribute("notification-id", notificationId);
@@ -153,7 +153,7 @@ export function showNotification(properties: ShowNotificationProps): string {
 
 export function closeNotification(notificationId: string) {
     let element = document.querySelector(
-        `[notification-id="${notificationId}"]`
+        `[notification-id="${notificationId}"]`,
     );
 
     if (element) {
@@ -195,7 +195,7 @@ export function closeToast(toastId: string) {
 
 export function closeDrawers() {
     window.dispatchEvent(
-        new CustomEvent(CustomEvents.CLOSE_DRAWERS_REQUEST, { detail: {} })
+        new CustomEvent(CustomEvents.CLOSE_DRAWERS_REQUEST, { detail: {} }),
     );
 }
 
