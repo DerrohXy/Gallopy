@@ -7,7 +7,7 @@ export type NavigationBarState = {
 export type NavigationBarProps = React.HTMLAttributes<HTMLDivElement> & {
     drawerContent?: any;
     menuContent?: any;
-    content?: Array<any> | any;
+    childContent?: Array<any> | any;
     drawerIcon?: any;
     menuIcon?: any;
     navigationWindowStyle?: React.CSSProperties;

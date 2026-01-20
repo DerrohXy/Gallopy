@@ -1,4 +1,6 @@
-export type InputProps = React.HTMLAttributes<HTMLInputElement>;
+export type InputProps = React.HTMLAttributes<HTMLInputElement> & {
+    placeholder?: string;
+};
 export declare function TextInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function NumberInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function WeekInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;

@@ -1,6 +1,6 @@
 import React from "react";
 export type CollapseViewProps = React.HTMLAttributes<HTMLDivElement> & {
-    content?: Array<any> | any;
+    childContent?: Array<any> | any;
     title: any;
     titleBarStyle?: React.CSSProperties;
     contentStyle?: React.CSSProperties;

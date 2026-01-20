@@ -16,7 +16,7 @@ export type TabbedWindowState = {
 };
 export type TabbedWindowTab = {
     title: any;
-    content: any;
+    childContent: any;
 };
 export declare function TabbedWindow(properties: TabbedWindowProps): React.JSX.Element;
 //# sourceMappingURL=TabbedWindow.d.ts.map

@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 type ShowDialogProps = {
     duration?: number;
-    content: Array<any> | any;
+    childContent: Array<any> | any;
     splash?: boolean;
     title?: string;
     closeOnClickOutside?: boolean;
@@ -14,7 +14,7 @@ export declare function showDialog(properties: ShowDialogProps): string;
 export declare function closeDialog(dialogId: string): void;
 type ShowNotificationProps = {
     duration?: number;
-    content: Array<any> | any;
+    childContent: Array<any> | any;
 };
 export declare function showNotification(properties: ShowNotificationProps): string;
 export declare function closeNotification(notificationId: string): void;
