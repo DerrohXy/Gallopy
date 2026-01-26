@@ -8,30 +8,34 @@ import {
     CreateElement,
 } from "../core";
 
-function dialogIcon_() {
+function dialogIcon_(icon?: any) {
     return CreateElement(
         "div",
         {
-            style: {
-                padding: "10px",
-                margin: "5px",
-            },
+            style: icon
+                ? {}
+                : {
+                      padding: "10px",
+                      margin: "5px",
+                  },
         },
-        ">",
+        icon || ">",
     );
 }
 
-function closeButton_(onClick: Function) {
+function closeButton_(onClick: Function, button?: any) {
     return CreateElement(
         "div",
         {
-            style: {
-                padding: "10px",
-                margin: "5px",
-            },
+            style: button
+                ? {}
+                : {
+                      padding: "10px",
+                      margin: "5px",
+                  },
             onClick: onClick,
         },
-        "<",
+        button || "<",
     );
 }
 
@@ -70,7 +74,7 @@ export function showDialog(properties: ShowDialogProps) {
             : CreateElement(
                   "div",
                   { className: Classes.DIALOG_TITLE_BAR },
-                  properties.icon || dialogIcon_(),
+                  dialogIcon_(properties.icon),
                   CreateElement(
                       "span",
                       {
@@ -78,11 +82,10 @@ export function showDialog(properties: ShowDialogProps) {
                       },
                       properties.title || "...",
                   ),
-                  properties.closeButton ||
-                      closeButton_((event: Event) => {
-                          event.stopPropagation();
-                          closeDialog(dialogId);
-                      }),
+                  closeButton_((event: Event) => {
+                      event.stopPropagation();
+                      closeDialog(dialogId);
+                  }, properties.closeButton),
               ),
         ...content,
     );
@@ -91,7 +94,8 @@ export function showDialog(properties: ShowDialogProps) {
     baseElement.setAttribute("dialog-id", dialogId);
 
     if (properties.closeOnClickOutside === true) {
-        baseElement.addEventListener("click", () => {
+        baseElement.addEventListener("click", (event: Event) => {
+            event.stopPropagation();
             closeDialog(dialogId);
         });
     }

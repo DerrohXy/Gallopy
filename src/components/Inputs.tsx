@@ -82,7 +82,9 @@ export function DateInput(properties: InputProps) {
     );
 }
 
-export type TextAreaProps = React.HTMLAttributes<HTMLTextAreaElement>;
+export type TextAreaProps = React.HTMLAttributes<HTMLTextAreaElement> & {
+    placeholder?: string;
+};
 
 export function TextArea(properties: TextAreaProps) {
     return CustomElement(
