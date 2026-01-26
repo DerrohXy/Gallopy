@@ -8,7 +8,9 @@ export declare function TimeInput(properties: InputProps): import("react").Detai
 export declare function MonthInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function DatetimeInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function DateInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
-export type TextAreaProps = React.HTMLAttributes<HTMLTextAreaElement>;
+export type TextAreaProps = React.HTMLAttributes<HTMLTextAreaElement> & {
+    placeholder?: string;
+};
 export declare function TextArea(properties: TextAreaProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function PasswordInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export declare function ColorInput(properties: InputProps): import("react").DetailedReactHTMLElement<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
