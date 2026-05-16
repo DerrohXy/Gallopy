@@ -120,7 +120,7 @@ export default [
     },
     // Utils bundle
     {
-        input: "src/utils/index.ts",
+        input: "src/utils/index.tsx",
         output: [
             {
                 file: "dist/utils/index.js",
