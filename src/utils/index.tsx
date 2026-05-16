@@ -5,37 +5,35 @@ import {
     Classes,
     Render,
     CustomEvents,
-    CreateElement,
 } from "../core";
 
-function dialogIcon_(icon?: any) {
-    return CreateElement(
-        "div",
-        {
-            style: icon
-                ? {}
-                : {
-                      padding: "10px",
-                      margin: "5px",
-                  },
-        },
-        icon || ">",
+import React from "react";
+
+function infoIcon_(content?: any) {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+        >
+            {content || ">"}
+        </div>
     );
 }
 
-function closeButton_(onClick: Function, button?: any) {
-    return CreateElement(
-        "div",
-        {
-            style: button
-                ? {}
-                : {
-                      padding: "10px",
-                      margin: "5px",
-                  },
-            onClick: onClick,
-        },
-        button || "<",
+function closeButton_(onClick: Function, content?: any) {
+    return (
+        <div
+            style={{
+                padding: "10px",
+                margin: "5px",
+            }}
+            // @ts-ignore
+            onClick={onClick}
+        >
+            {content || "<"}
+        </div>
     );
 }
 
@@ -60,34 +58,29 @@ export function showDialog(properties: ShowDialogProps) {
 
     let iconStyle = { fontSize: "25px", margin: "5px" };
 
-    let element = CreateElement(
-        "div",
-        {
-            className: Classes.DIALOG,
-            onClick: (event: Event) => {
+    let element = (
+        <div
+            className={Classes.DIALOG}
+            // @ts-ignore
+            onClick={(event: Event) => {
                 event.stopPropagation();
-            },
-            style: properties.style || {},
-        },
-        properties.splash
-            ? null
-            : CreateElement(
-                  "div",
-                  { className: Classes.DIALOG_TITLE_BAR },
-                  dialogIcon_(properties.icon),
-                  CreateElement(
-                      "span",
-                      {
-                          className: Classes.DIALOG_TITLE,
-                      },
-                      properties.title || "...",
-                  ),
-                  closeButton_((event: Event) => {
-                      event.stopPropagation();
-                      closeDialog(dialogId);
-                  }, properties.closeButton),
-              ),
-        ...content,
+            }}
+            style={properties.style || {}}
+        >
+            {properties.splash ? null : (
+                <div className={Classes.DIALOG_TITLE_BAR}>
+                    {infoIcon_(properties.icon)}
+                    <span className={Classes.DIALOG_TITLE}>
+                        {properties.title || "..."}
+                    </span>
+                    {closeButton_((event: Event) => {
+                        event.stopPropagation();
+                        closeDialog(dialogId);
+                    }, properties.closeButton)}
+                </div>
+            )}
+            {...content}
+        </div>
     );
 
     baseElement.classList.add(Classes.DIALOG_WINDOW);
@@ -95,8 +88,9 @@ export function showDialog(properties: ShowDialogProps) {
 
     if (properties.closeOnClickOutside === true) {
         baseElement.addEventListener("click", (event: Event) => {
-            event.stopPropagation();
-            closeDialog(dialogId);
+            if (event.target === baseElement) {
+                closeDialog(dialogId);
+            }
         });
     }
     document.body.appendChild(baseElement);
@@ -125,23 +119,53 @@ type ShowNotificationProps = {
     childContent: Array<any> | any;
 };
 
+function getTotalOuterHeightByClass(className: string): number {
+    const elements = document.getElementsByClassName(className);
+    let totalHeight = 0;
+
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i] as HTMLElement;
+
+        const style = window.getComputedStyle(element);
+
+        const marginTop = parseFloat(style.marginTop) || 0;
+        const marginBottom = parseFloat(style.marginBottom) || 0;
+
+        const outerHeight = element.offsetHeight + marginTop + marginBottom;
+
+        totalHeight += outerHeight;
+    }
+
+    return totalHeight;
+}
+
 export function showNotification(properties: ShowNotificationProps): string {
     closeNotifications();
 
     let content = LoadContent(properties.childContent),
         notificationId = GetUniqueId();
 
+    let existingDisplacement = getTotalOuterHeightByClass(Classes.NOTIFICATION);
+
     let baseElement = document.createElement("div");
 
-    let element = CreateElement(
-        "div",
-        {
-            onClick: (event: Event) => {
+    let element = (
+        <div
+            className={Classes.NOTIFICATION}
+            // @ts-ignore
+            onClick={(event: Event) => {
                 event.stopPropagation();
-            },
-            className: Classes.NOTIFICATION,
-        },
-        ...content,
+            }}
+            style={
+                existingDisplacement > 0
+                    ? {
+                          top: `${existingDisplacement + 10}px`,
+                      }
+                    : {}
+            }
+        >
+            {...content}
+        </div>
     );
 
     baseElement.setAttribute("notification-id", notificationId);
